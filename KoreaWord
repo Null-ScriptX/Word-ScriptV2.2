@@ -893,7 +893,6 @@ end
 local function pickAutoWord(char)
     local variant = getDueumVariant(char)
     local specialCandidates = {}
-    local normalCandidates = {}
 
     for _, w in ipairs(words) do
         local matches = string.sub(w, 1, #char) == char
@@ -901,22 +900,13 @@ local function pickAutoWord(char)
             matches = string.sub(w, 1, #variant) == variant
         end
 
-        if matches and not autoUsedWords[w] then
-            if isSpecialWord(w) then
-                table.insert(specialCandidates, w)
-            else
-                table.insert(normalCandidates, w)
-            end
+        if matches and not autoUsedWords[w] and isSpecialWord(w) then
+            table.insert(specialCandidates, w)
         end
     end
 
     if #specialCandidates > 0 then
         local chosen = specialCandidates[1]
-        autoUsedWords[chosen] = true
-        return chosen
-    elseif #normalCandidates > 0 then
-        table.sort(normalCandidates, function(a, b) return #a > #b end)
-        local chosen = normalCandidates[1]
         autoUsedWords[chosen] = true
         return chosen
     end

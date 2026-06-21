@@ -208,7 +208,7 @@ local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1, -50, 0, 35)
 title.Position = UDim2.new(0, 24, 0, 16)
 title.BackgroundTransparency = 1
-title.Text = "끝말잇기 V2"
+title.Text = "끝말잇기 V2.1"
 title.Font = Enum.Font.GothamBold
 title.TextSize = 22
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -576,7 +576,7 @@ local function createResult(word, isSpecial, orderIndex)
     wordLabel.Position = UDim2.new(0, 16, 0, 0) 
     wordLabel.BackgroundTransparency = 1
     
-    wordLabel.Text = isSpecial and (word .. " (한방에 가버렷)") or word
+    wordLabel.Text = isSpecial and (word .. " (한 방에 가버렷)") or word
     wordLabel.Font = Enum.Font.GothamMedium
     wordLabel.TextSize = 15
     wordLabel.TextColor3 = Color3.fromRGB(255, 255, 255)

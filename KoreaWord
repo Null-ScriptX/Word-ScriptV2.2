@@ -9,18 +9,6 @@ local WORDS_URLS = {
     "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part1.txt",
     "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part2.txt",
     "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part3.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part4.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part5.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part6.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part7.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part8.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part9.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part10.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part11.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part12.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part13.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part14.txt",
-    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words_part15.txt",
 }
 
 local words = {}

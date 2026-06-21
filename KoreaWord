@@ -5,7 +5,7 @@ local player = Players.LocalPlayer
 
 local gui = player:WaitForChild("PlayerGui")
 
-local WORDS_URL = "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2/main/words.lua"
+local WORDS_URL = "https://github.com/Null-ScriptX/Word-ScriptV2/blob/main/LOL.lua"
 
 local words = {}
 

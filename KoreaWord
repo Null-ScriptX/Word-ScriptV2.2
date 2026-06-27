@@ -6,11 +6,11 @@ local player = Players.LocalPlayer
 local gui = player:WaitForChild("PlayerGui")
 
 local WORDS_URLS = {
-    "https://github.com/Null-ScriptX/Word-ScriptV2.2/blob/main/words_part1.txt",
-    "https://github.com/Null-ScriptX/Word-ScriptV2.2/blob/main/words_part2.txt",
-    "https://github.com/Null-ScriptX/Word-ScriptV2.2/blob/main/words_part3.txt",
-    "https://github.com/Null-ScriptX/Word-ScriptV2.2/blob/main/words_part4.txt",
-    "https://github.com/Null-ScriptX/Word-ScriptV2.2/blob/main/words_part5.txt",
+    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2.2/main/words_part1.txt",
+    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2.2/main/words_part2.txt",
+    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2.2/main/words_part3.txt",
+    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2.2/main/words_part4.txt",
+    "https://raw.githubusercontent.com/Null-ScriptX/Word-ScriptV2.2/main/words_part5.txt",
 }
 
 local words = {}
@@ -1058,13 +1058,28 @@ task.spawn(function()
 
             if success and type(content) == "string" then
                 local parseCount = 0
-                for word in content:gmatch("[^\r\n]+") do
+                for word in content:gmatch('"([^"]+)"') do
                     word = word:match("^%s*(.-)%s*$")
                     if word ~= "" and not wordSet[word] then
                         wordSet[word] = true
                         table.insert(words, word)
                     end
-                    
+
+                    parseCount += 1
+                    if parseCount % 1000 == 0 then
+                        task.wait() 
+                    end
+                end
+
+                for line in content:gmatch("[^\r\n]+") do
+                    if not line:find('"') then
+                        local word = line:match("^%s*(.-)%s*$")
+                        if word ~= "" and not wordSet[word] then
+                            wordSet[word] = true
+                            table.insert(words, word)
+                        end
+                    end
+
                     parseCount += 1
                     if parseCount % 1000 == 0 then
                         task.wait() 
